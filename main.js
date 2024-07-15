@@ -183,3 +183,45 @@ evaluates arithmetic operations based on input stored in the 'entries' variable 
 
 
 */
+
+let entries = []
+let total = 0
+let temp = ''
+
+function handleVariables(value) {
+  if (value === '=') {
+    entries.push(temp)
+    total = evaluateExpression(entries) + displayResult(total)
+    entries = []
+    temp = ''
+  } else {
+    temp += value //(displayInput temp)
+  }
+  displayInput(temp)
+}
+
+document.querySelectorAll('button').forEach((button) => {
+  button.addEventListener('click', function () {
+    handleVariables(this.value)
+  })
+})
+
+function displayInput(input) {
+  document.getElementById('screen').value = input
+}
+
+function displayResult() {
+  document.getElementById('screen').value = total
+}
+
+const clearButton = document.getElementById('clearButton') //Helped by ai
+clearButton.addEventListener('click', clearInput)
+
+function clearInput() {
+  //Helped by ai
+  // Reset any relevant variables (e.g., temp, entries, total)
+  temp = ''
+  entries = []
+  total = 0
+  displayInput('') // Clear the input display
+}
