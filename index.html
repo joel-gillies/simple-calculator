@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="main.css" />
-    <script src="main.js"></script>
+    <title>Calculator Project</title>
   </head>
   <body>
-    <div class="container">
-      <h4>Joel & Alexei Calc</h4>
-      <input class="screen" id="screen" readonly />
-      <div class="row1">
-        <button id="ac">AC</button>
-        <button id="sqrt">√</button>
-        <button id="division">/</button>
-        <button id="percentage">%</button>
+    <div class="whole-page">
+      <div class="display">
+        <p class="calculation-display" id="calculation-display">0</p>
+        <p class="result-display" id="result-display">0</p>
       </div>
-      <div class="row2">
-        <button id="seven">7</button>
-        <button id="eight">8</button>
-        <button id="nine">9</button>
-        <button id="multiply">*</button>
-      </div>
-      <div class="row3">
-        <button id="four">4</button>
-        <button id="five">5</button>
-        <button id="six">6</button>
-        <button id="subtract">-</button>
-      </div>
-      <div class="row4">
-        <button id="one">1</button>
-        <button id="two">2</button>
-        <button id="three">3</button>
-        <button id="add">+</button>
-      </div>
-      <div class="row5">
-        <button id="zero">0</button>
-        <button id="decimal">.</button>
-        <button id="sign">+/-</button>
-        <button id="equals">=</button>
+      <div class="buttons">
+        <p>
+          <button class="num-but" onclick="updateCalculation('1')">1</button>
+          <button class="num-but" onclick="updateCalculation('2')">2</button>
+          <button class="num-but" onclick="updateCalculation('3')">3</button>
+          <button class="Orange-button" onclick="updateCalculation('+')">
+            +
+          </button>
+        </p>
+        <p>
+          <button class="num-but" onclick="updateCalculation('4')">4</button>
+          <button class="num-but" onclick="updateCalculation('5') ">5</button>
+          <button class="num-but" onclick="updateCalculation('6')">6</button>
+          <button class="Orange-button" onclick="updateCalculation('-')">
+            -
+          </button>
+        </p>
+        <p>
+          <button class="num-but" onclick="updateCalculation('7')">7</button>
+          <button class="num-but" onclick="updateCalculation('8')">8</button>
+          <button class="num-but" onclick="updateCalculation('9')">9</button>
+          <button class="Orange-button" onclick="updateCalculation('*')">
+            *
+          </button>
+        </p>
+        <p>
+          <button class="num-but" onclick="updateCalculation('0')">0</button>
+          <button class="num-but" onclick="updateCalculation('.')">.</button>
+          <button class="num-but" onclick="calculateResult();">=</button>
+          <button class="Orange-button" onclick="updateCalculation('/')">
+            /
+          </button>
+        </p>
+        <p>
+          <button class="clear-button" onclick="clearDisplay()">Clear</button>
+
+          <button
+            class="Del-button"
+            onclick="deleteLastCharacter()"
+            id="Del-button"
+          >
+            Del
+          </button>
+        </p>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
